@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* Today is January 10,your birthday.</span><br />
+				<span class="space"/><span class="comments">* I wanna say something to you,here is the story.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				<span class="comments">// Three years ago, a girl met a boy.</span><br />
+				Girl i = <span class="keyword">new</span> Girl(<span class="string">"HelenYan"</span>);<br />
+				Boy u = <span class="keyword">new</span> Boy(<span class="string">"SourcellXu"</span>);<br />
+				i.met(u);<br />
+				<span class="comments">// On Mid-Autumn Festival 2018, you give me a mooncake.</span><br />
+				<span class="comments">// Maybe I had a little crush on you from this time on unconsciously.</span><br />
+				i.fallen();<br />
+				<span class="comments">// But since then, we haven't had a conversation.</span><br />
+				<span class="comments">// With no reason,I can not forget you.So I offered to ask you out to see a movie and you said yes.</span><br />
+				u.accepted();<br />
+				<span class="comments">// We had a nice night.After a couple of days,I asked you if you wanna to stay with me.</span><br />
+				i.asked(u);<br />
+				<span class="comments">// You say that you won't be so easy to answer me.</span><br />
+				<span class="comments">// So I keep waiting and I have no confidence that you will.</span><br />
+				<span class="keyword">boolean</span> isSayNo = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (isSayNo) {<br />
+				<span class="placeholder"/>i.waitFor(u);<br />
+				<span class="placeholder"/><span class="comments">// I think it is an important decision,</span><br />
+				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
+				<span class="placeholder"/>isSayNo = u.thinkOver();<br />
+				}<br />
+				<span class="comments">// You say yes which is a magic thing to me.</span><br />
+				u.sayYes();<br />
+				<span class="comments">// I know that your birthday wish is I can find my own spark.I will keep trying.</span><br />
+				i.try();<br />
+				<span class="comments">// And I will always accompany you for your birthday, including today and many more in the future if you need me.</span><br />
+				i.company(u);<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Sanxell, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Helen</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div id="copyright">
+			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011
+		</div> -->
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2
+		var offsetY = $("#loveHeart").height() / 2 - 40;
+		var together = new Date();
+		together.setFullYear(2019, 5, 19);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
